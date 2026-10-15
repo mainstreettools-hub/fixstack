@@ -1,7 +1,7 @@
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SITE } from '@/lib/errors';
-export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description };
+export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description, verification: { other: { 'msvalidate.01': '9D648B9DE133BDDC9EDA97AA40217BF0' } } };
 export default function RootLayout({ children }) {
   return (<html lang="en"><body>
     <header className="top"><a href="/" className="logo">FixStack</a><nav><a href="/about/">About</a><a href="/sponsor/">Sponsor</a><a href="/featured/">Get featured</a></nav></header>
