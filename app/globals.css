@@ -1,0 +1,10 @@
+body{margin:0;font-family:system-ui,sans-serif;color:#111;background:#fafafa;line-height:1.6}
+main{max-width:820px;margin:0 auto;padding:24px}
+.top{padding:14px 24px;background:#111}.logo{color:#fff;font-weight:700;text-decoration:none}
+footer{text-align:center;color:#888;padding:32px}
+.sub{color:#555}.search{width:100%;padding:12px;font-size:16px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+.chips{margin:12px 0;display:flex;gap:8px;flex-wrap:wrap}.chips button{padding:6px 12px;border:1px solid #ccc;border-radius:20px;background:#fff;cursor:pointer}.chips .on{background:#111;color:#fff}
+.list{list-style:none;padding:0}.list li a{display:block;padding:12px;margin:6px 0;background:#fff;border:1px solid #eee;border-radius:8px;color:#111;text-decoration:none}
+.tag{font-size:12px;background:#eef;color:#336;padding:2px 8px;border-radius:10px;margin-right:8px}
+pre{background:#0d1117;color:#e6edf3;padding:12px;border-radius:8px;overflow-x:auto;white-space:pre-wrap}.err{background:#2a0d0d;color:#ffb4b4}
+.news{margin-top:40px;padding:20px;background:#fff;border:1px solid #eee;border-radius:8px}.news input{padding:10px;width:60%}.news button{padding:10px 16px}
