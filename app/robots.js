@@ -1,3 +1,4 @@
 import { SITE } from '@/lib/errors';
 export const dynamic = 'force-static';
-export default function robots() { return { rules: { userAgent: '*', allow: '/' }, sitemap: `${SITE.url}/sitemap.xml` }; }
+const bots = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Google-Extended', 'Bingbot'];
+export default function robots() { return { rules: [...bots.map(userAgent => ({ userAgent, allow: '/' })), { userAgent: '*', allow: '/' }], sitemap: `${SITE.url}/sitemap.xml` }; }
