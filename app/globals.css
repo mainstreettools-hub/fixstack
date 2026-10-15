@@ -15,3 +15,17 @@ footer a{color:#555}.fine{font-size:13px;color:#777}
 table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;background:#fff}
 th,td{border:1px solid #eee;padding:8px 10px;text-align:left;vertical-align:top}
 th{background:#f3f3f3}
+
+.quiz{margin-top:24px}
+.quiz-steps{display:flex;gap:12px;list-style:none;padding:0;margin:0 0 20px;flex-wrap:wrap;font-size:13px;color:#888}
+.quiz-steps .on{color:#111;font-weight:700}
+.quiz-steps .done{color:#336}
+.quiz-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:12px}
+.quiz-options-wide{grid-template-columns:1fr}
+.quiz-option{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:12px 14px;background:#fff;border:1px solid #ddd;border-radius:8px;cursor:pointer;font:inherit;color:#111}
+.quiz-option:hover{border-color:#111}
+.quiz-option strong{font-weight:600}
+.linkish{background:none;border:none;padding:0;color:#336;text-decoration:underline;cursor:pointer;font:inherit}
+.quiz-news{margin-top:28px}
+.quiz-news h3{margin-top:0}
+.tier{min-width:0;overflow-wrap:anywhere;word-break:break-word}.tier ul{padding-left:18px}.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:10px;background:#e6f6ea;color:#17692f}.badge.sold{background:#f3e3e3;color:#8a1f1f}

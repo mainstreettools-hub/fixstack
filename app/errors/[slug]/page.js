@@ -1,3 +1,4 @@
+import SponsorCallout from '../../SponsorCallout';
 import { errors, getError, SITE } from '@/lib/errors';
 import { categoryFor } from '@/lib/categories';
 import { ERROR_CATEGORY_SPONSORS, PREVENTION_TOOLS } from '@/lib/monetization';
@@ -37,7 +38,7 @@ export default function Page({ params }) {
     <h2>Likely causes</h2><ul>{e.causes.map((c, i) => <li key={i}>{c}</li>)}</ul>
     <h2>How to fix it</h2><ol>{e.steps.map((s, i) => <li key={i}><p>{s.text}</p>{s.code && <pre><code>{s.code}</code></pre>}</li>)}</ol>
     {sponsor
-      ? <aside className="tier"><span className="tag">Sponsor</span><a href={sponsor.url} rel="sponsored noopener">{sponsor.name}</a>: {sponsor.tagline}</aside>
+      ? <SponsorCallout sponsor={sponsor} />
       : cat && <aside className="tier fine">Your tool here: sponsor <b>{cat.name}</b> and reach builders fixing these exact errors. <a href="/sponsor/#categories">Learn more</a></aside>}
     {cat && <><h2>Prevent this next time</h2><ul>{cat.prevent.map((p, i) => <li key={i}>{p}</li>)}</ul>
       {cat.tools.includes('betterstack') && <p>Guide: <a href="/guides/uptime-monitoring-better-stack/">catch outages before your users do</a>.</p>}
