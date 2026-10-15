@@ -1,5 +1,6 @@
 import { errors, SITE, PLATFORMS } from '@/lib/errors';
 import { categoryFor } from '@/lib/categories';
+import { COMPARISONS } from '@/lib/comparisons';
 export const dynamic = 'force-static';
 export function GET() {
   const out = [`# ${SITE.name}: full content`, '', `> ${SITE.description}`, ''];
@@ -10,5 +11,6 @@ export function GET() {
     if (c) out.push('', 'Prevent this next time:', ...c.prevent.map(x => `- ${x}`));
     out.push('');
   }
+  out.push('## Comparisons', '', ...COMPARISONS.map(c => `- [${c.title}](${SITE.url}/compare/${c.slug}/): ${c.description}`), '');
   return new Response(out.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
