@@ -11,6 +11,6 @@ export function GET() {
     if (c) out.push('', 'Prevent this next time:', ...c.prevent.map(x => `- ${x}`));
     out.push('');
   }
-  out.push('## Comparisons', '', ...COMPARISONS.map(c => `- [${c.title}](${SITE.url}/compare/${c.slug}/): ${c.description}`), '');
+  out.push('## Quiz', '', `- [Which fix do I need?](${SITE.url}/quiz/): Pick a platform and a symptom; FixStack links you to the matching error fix page(s). Optional newsletter signup uses the same /api/subscribe flow as the rest of the site.`, '', '## Comparisons', '', ...COMPARISONS.map(c => `- [${c.title}](${SITE.url}/compare/${c.slug}/): ${c.description}`), '');
   return new Response(out.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
