@@ -22,6 +22,11 @@ export default function Page({ params }) {
   const ld = [
     { '@context': 'https://schema.org', '@type': 'TechArticle', headline: e.title, about: e.platform, url: `${SITE.url}/errors/${e.slug}/` },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+    { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: e.platform, item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 3, name: e.title, item: `${SITE.url}/errors/${e.slug}/` },
+    ] },
   ];
   return (<article>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, '\\u003c') }} />
