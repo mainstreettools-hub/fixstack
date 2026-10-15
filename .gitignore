@@ -5,3 +5,4 @@ out
 .env*
 public/dl/
 app/dl/
+.stripe-category-sponsors.json
