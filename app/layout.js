@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (<html lang="en"><body>
     <header className="top"><a href="/" className="logo">FixStack</a><nav><a href="/about/">About</a><a href="/sponsor/">Sponsor</a><a href="/featured/">Get featured</a></nav></header>
     <main>{children}</main>
-    <footer><p><a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/sponsor/">Sponsor</a> · <a href="/featured/">Get featured</a></p>
+    <footer><p><a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/disclosure/">Disclosure</a> · <a href="/sponsor/">Sponsor</a> · <a href="/featured/">Get featured</a></p>
     <p>A <a href="https://mainstreetai.tools">MainStreetAI</a> project · <a href="https://mainstreetai.tools/guides">AI guides for small businesses</a></p><p>© {new Date().getFullYear()} FixStack</p></footer>
     <Analytics /></body></html>);
 }

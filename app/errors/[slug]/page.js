@@ -1,5 +1,7 @@
 import { errors, getError, SITE } from '@/lib/errors';
 import Newsletter from '../../Newsletter';
+import FixForMe from '../../FixForMe';
+import PlatformExtras from '../../PlatformExtras';
 export const dynamicParams = false;
 export function generateStaticParams() { return errors.map(e => ({ slug: e.slug })); }
 export function generateMetadata({ params }) {
@@ -19,6 +21,8 @@ export default function Page({ params }) {
     <h2>Likely causes</h2><ul>{e.causes.map((c, i) => <li key={i}>{c}</li>)}</ul>
     <h2>How to fix it</h2><ol>{e.steps.map((s, i) => <li key={i}><p>{s.text}</p>{s.code && <pre><code>{s.code}</code></pre>}</li>)}</ol>
     <h2>Related errors</h2><ul>{e.related.map(r => { const x = getError(r); return <li key={r}><a href={`/errors/${r}/`}>{x.title}</a></li>; })}</ul>
+    <FixForMe />
+    <PlatformExtras platform={e.platform} />
     <Newsletter />
   </article>);
 }
