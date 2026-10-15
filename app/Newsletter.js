@@ -4,7 +4,7 @@ export default function Newsletter() {
   const [msg, setMsg] = useState(''); const [busy, setBusy] = useState(false);
   async function submit(e) {
     e.preventDefault(); setBusy(true);
-    try { const r = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: e.target.email.value }) }); const j = await r.json(); setMsg(j.message); }
+    try { const r = await fetch('/api/subscribe/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: e.target.email.value }) }); const j = await r.json(); setMsg(j.message); }
     catch { setMsg('Could not subscribe right now.'); } finally { setBusy(false); }
   }
   return (<section className="news"><h2>Get new fixes weekly</h2>
