@@ -1,6 +1,12 @@
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import { SITE } from '@/lib/errors';
-export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description };
+export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description };
 export default function RootLayout({ children }) {
-  return (<html lang="en"><body><header className="top"><a href="/" className="logo">FixStack</a></header><main>{children}</main><footer>© {new Date().getFullYear()} FixStack</footer></body></html>);
+  return (<html lang="en"><body>
+    <header className="top"><a href="/" className="logo">FixStack</a><nav><a href="/about/">About</a><a href="/sponsor/">Sponsor</a><a href="/featured/">Get featured</a></nav></header>
+    <main>{children}</main>
+    <footer><p><a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/sponsor/">Sponsor</a> · <a href="/featured/">Get featured</a></p>
+    <p>A <a href="https://mainstreetai.tools">MainStreetAI</a> project · <a href="https://mainstreetai.tools/guides">AI guides for small businesses</a></p><p>© {new Date().getFullYear()} FixStack</p></footer>
+    <Analytics /></body></html>);
 }

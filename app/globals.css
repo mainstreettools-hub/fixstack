@@ -8,3 +8,6 @@ footer{text-align:center;color:#888;padding:32px}
 .tag{font-size:12px;background:#eef;color:#336;padding:2px 8px;border-radius:10px;margin-right:8px}
 pre{background:#0d1117;color:#e6edf3;padding:12px;border-radius:8px;overflow-x:auto;white-space:pre-wrap}.err{background:#2a0d0d;color:#ffb4b4}
 .news{margin-top:40px;padding:20px;background:#fff;border:1px solid #eee;border-radius:8px}.news input{padding:10px;width:60%}.news button{padding:10px 16px}
+.top{display:flex;justify-content:space-between;align-items:center}.top nav a{color:#ddd;margin-left:16px;text-decoration:none;font-size:14px}
+footer a{color:#555}.fine{font-size:13px;color:#777}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tier{background:#fff;border:1px solid #eee;border-radius:8px;padding:16px}.btn{display:inline-block;padding:10px 16px;background:#999;color:#fff;border-radius:6px;text-decoration:none}
