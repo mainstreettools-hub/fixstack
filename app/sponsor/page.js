@@ -12,7 +12,6 @@ export default function Page() {
     <h2 id="categories">Error-category sponsorships</h2>
     <p>Own one error category: your callout appears inside the fix section of every page in it, right where readers are solving the problem. One sponsor per category. {CATEGORIES.length} categories cover {total} error pages.</p>
     <p><strong>First month free</strong>: you pay $0 today and billing starts after {CATEGORY_SPONSOR.trialDays} days. Cancel anytime. <strong>Traffic is still near zero</strong> — the site launched in October 2026 and we are still growing through Google search and a weekly newsletter. We tell every sponsor this up front.</p>
-    <p>Want a cheaper listing instead? <a href="/featured/">Featured listings</a> are $39/mo for a tool listing on up to 5 relevant pages; a category sponsorship is an exclusive callout on every page in a category.</p>
     <h3>What your callout looks like</h3>
     <SponsorCallout example sponsor={{ name: 'Your tool', tagline: 'one line about how it helps with this error, linking to your site.' }} />
     <div className="tiers" style={{ marginTop: 16 }}>
