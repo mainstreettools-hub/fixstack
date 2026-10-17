@@ -21,7 +21,9 @@ export default function Page({ params }) {
   const tools = (cat?.tools || []).map(k => PREVENTION_TOOLS[k]).filter(t => t && t.url);
   const faq = faqFor(e);
   const ld = [
-    { '@context': 'https://schema.org', '@type': 'TechArticle', headline: e.title, about: e.platform, url: `${SITE.url}/errors/${e.slug}/` },
+    { '@context': 'https://schema.org', '@type': 'TechArticle', headline: e.title, about: e.platform, url: `${SITE.url}/errors/${e.slug}/`,
+      ...(e.checked ? { dateModified: e.checked } : {}),
+      ...(e.sources?.length ? { citation: e.sources.map(x => ({ '@type': 'CreativeWork', name: x.name, url: x.url })) } : {}) },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
@@ -44,6 +46,7 @@ export default function Page({ params }) {
       {cat.tools.includes('betterstack') && <p>Guide: <a href="/guides/uptime-monitoring-better-stack/">catch outages before your users do</a>.</p>}
       {tools.length > 0 && <><p>Tools that help:</p><ul>{tools.map(t => <li key={t.name}><a href={t.url} rel="sponsored noopener" target="_blank">{t.name}</a>: {t.blurb}</li>)}</ul><AffiliateDisclosure /></>}</>}
     <FaqSection faq={faq} />
+    {e.checked && <p className="fine">Last checked against official docs on <time dateTime={e.checked}>{new Date(e.checked + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' })}</time>{e.sources?.length > 0 && <>. Sources: {e.sources.map((x, i) => <span key={x.url}>{i > 0 && ', '}<a href={x.url} rel="noopener" target="_blank">{x.name}</a></span>)}</>}.</p>}
     <h2>Related errors</h2><ul>{e.related.map(r => { const x = getError(r); return <li key={r}><a href={`/errors/${r}/`}>{x.title}</a></li>; })}</ul>
     <p>More <a href={`/platforms/${platformSlug(e.platform)}/`}>{e.platform} errors and fixes →</a></p>
     <FixForMe />

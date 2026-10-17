@@ -6,7 +6,7 @@ export default function sitemap() {
   return [
     { url: `${SITE.url}/`, priority: 1 },
     ...PLATFORMS.map(p => ({ url: `${SITE.url}/platforms/${platformSlug(p)}/`, priority: 0.6 })),
-    ...errors.map(e => ({ url: `${SITE.url}/errors/${e.slug}/`, priority: 0.8 })),
+    ...errors.map(e => ({ url: `${SITE.url}/errors/${e.slug}/`, priority: 0.8, ...(e.checked ? { lastModified: e.checked } : {}) })),
     ...staticPages.map(p => ({ url: `${SITE.url}/${p}/`, priority: 0.3 })),
     ...COMPARISONS.map(c => ({ url: `${SITE.url}/compare/${c.slug}/`, priority: 0.5 })),
   ];

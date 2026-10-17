@@ -9,6 +9,7 @@ export function GET() {
     out.push(`## ${e.title}`, '', `URL: ${SITE.url}/errors/${e.slug}/`, `Platform: ${e.platform} (${SITE.url}/platforms/${platformSlug(e.platform)}/)${c ? ` | Category: ${c.name}` : ''}`, '', 'Exact error:', '```', e.message, '```', '', `What it means: ${e.meaning}`, '', 'Likely causes:', ...e.causes.map(x => `- ${x}`), '', 'How to fix it:');
     e.steps.forEach((s, i) => { out.push(`${i + 1}. ${s.text}`); if (s.code) out.push('```', s.code, '```'); });
     if (c) out.push('', 'Prevent this next time:', ...c.prevent.map(x => `- ${x}`));
+    if (e.checked) out.push('', `Last checked against official docs: ${e.checked}${e.sources?.length ? ` (${e.sources.map(x => `${x.name}: ${x.url}`).join('; ')})` : ''}`);
     out.push('');
   }
   out.push('## Quiz', '', `- [Which fix do I need?](${SITE.url}/quiz/): Pick a platform and a symptom; FixStack links you to the matching error fix page(s). Optional newsletter signup uses the same /api/subscribe flow as the rest of the site.`, '', '## Comparisons', '', ...COMPARISONS.map(c => `- [${c.title}](${SITE.url}/compare/${c.slug}/): ${c.description}`), '');
