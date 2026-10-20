@@ -1,7 +1,7 @@
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
-import { SITE } from '@/lib/errors';
-export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description, verification: { other: { 'msvalidate.01': '9D648B9DE133BDDC9EDA97AA40217BF0' } } };
+import { SITE, OG_IMAGE } from '@/lib/errors';
+export const metadata = { metadataBase: new URL(SITE.url), title: { default: `${SITE.name}: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors`, template: `%s | ${SITE.name}` }, description: SITE.description, openGraph: { siteName: SITE.name, type: 'website', locale: 'en_US', images: [OG_IMAGE] }, twitter: { card: 'summary_large_image', images: [OG_IMAGE.url] }, verification: { other: { 'msvalidate.01': '9D648B9DE133BDDC9EDA97AA40217BF0' } } };
 export default function RootLayout({ children }) {
   return (<html lang="en"><head><meta name="impact-site-verification" value="3f919170-3684-42c5-9c3b-3e5cc61039fc" /></head><body>
     <header className="top"><a href="/" className="logo">FixStack</a><nav><a href="/quiz/">Quiz</a><a href="/compare/">Compare</a><a href="/guides/">Guides</a><a href="/about/">About</a><a href="/sponsor/">Sponsor</a><a href="/fix-pack/">Fix Pack</a><a href="/featured/">Get featured</a></nav></header>

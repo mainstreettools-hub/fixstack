@@ -1,5 +1,5 @@
 import SponsorCallout from '../../SponsorCallout';
-import { errors, getError, SITE, platformSlug } from '@/lib/errors';
+import { errors, getError, SITE, platformSlug, OG_IMAGE } from '@/lib/errors';
 import { categoryFor } from '@/lib/categories';
 import { ERROR_CATEGORY_SPONSORS, PREVENTION_TOOLS } from '@/lib/monetization';
 import Newsletter from '../../Newsletter';
@@ -12,7 +12,7 @@ export function generateStaticParams() { return errors.map(e => ({ slug: e.slug 
 export function generateMetadata({ params }) {
   const e = getError(params.slug);
   const description = `${e.platform} error fix: ${e.meaning}`.slice(0, 158);
-  return { title: `${e.title} (${e.platform} fix)`, description, alternates: { canonical: `/errors/${e.slug}/` }, openGraph: { title: e.title, description, type: 'article' } };
+  return { title: `${e.title} (${e.platform} fix)`, description, alternates: { canonical: `/errors/${e.slug}/` }, openGraph: { title: e.title, description, type: 'article', url: `/errors/${e.slug}/`, siteName: SITE.name, images: [OG_IMAGE], ...(e.checked ? { modifiedTime: e.checked } : {}) }, twitter: { card: 'summary_large_image', title: e.title, description, images: [OG_IMAGE.url] } };
 }
 export default function Page({ params }) {
   const e = getError(params.slug);

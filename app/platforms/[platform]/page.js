@@ -1,4 +1,4 @@
-import { errors, PLATFORMS, PLATFORM_INTROS, SITE, HUBS_UPDATED, platformSlug, platformFromSlug } from '@/lib/errors';
+import { errors, PLATFORMS, PLATFORM_INTROS, SITE, HUBS_UPDATED, platformSlug, platformFromSlug, OG_IMAGE } from '@/lib/errors';
 const firstSentence = (t) => { const m = t.replace(/\s+/g, ' ').match(/^.*?[.:!?](\s|$)/); return (m ? m[0] : t).trim().replace(/:$/, '.'); };
 const fmtDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
 import { CATEGORIES } from '@/lib/categories';
@@ -9,7 +9,7 @@ export function generateMetadata({ params }) {
   const p = platformFromSlug(params.platform);
   const n = errors.filter(e => e.platform === p).length;
   const description = `${n} common ${p} errors with the exact message, cause and a step-by-step fix. ${PLATFORM_INTROS[p] || ''}`.slice(0, 158);
-  return { title: `${n} common ${p} errors and fixes`, description, alternates: { canonical: `/platforms/${params.platform}/` }, openGraph: { title: `${p} errors and fixes`, description } };
+  return { title: `${n} common ${p} errors and fixes`, description, alternates: { canonical: `/platforms/${params.platform}/` }, openGraph: { title: `${p} errors and fixes`, description, url: `/platforms/${params.platform}/`, siteName: SITE.name, type: 'website', images: [OG_IMAGE] }, twitter: { card: 'summary_large_image', title: `${p} errors and fixes`, description, images: [OG_IMAGE.url] } };
 }
 export default function Page({ params }) {
   const p = platformFromSlug(params.platform);
