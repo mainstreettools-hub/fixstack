@@ -1,7 +1,7 @@
 import { SITE } from '@/lib/errors';
 const title = 'How to catch Vercel and Supabase outages before your users do (Better Stack uptime + heartbeat monitoring)';
 const description = 'Set up uptime checks and cron heartbeats with Better Stack so 500s, 504 timeouts, failing Edge Functions and silent cron failures alert you first.';
-export const metadata = { title: 'Catch Vercel & Supabase outages before users do with Better Stack', description, alternates: { canonical: '/guides/uptime-monitoring-better-stack/' } };
+export const metadata = { title: 'Catch Vercel & Supabase outages before users do with Better Stack', description, alternates: { canonical: `${SITE.url}/guides/uptime-monitoring-better-stack/` } };
 const code1 = `// app/api/health/route.js  (Next.js App Router)
 export const dynamic = 'force-dynamic';
 

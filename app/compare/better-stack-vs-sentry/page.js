@@ -4,7 +4,7 @@ import { SITE } from '@/lib/errors';
 const slug = 'better-stack-vs-sentry';
 const title = 'Better Stack vs Sentry: which monitoring tool for your Next.js or Supabase app?';
 const description = 'Compare Better Stack and Sentry for uptime, error tracking, logs and on-call. Pricing from official pages (Oct 2026) and when each fits FixStack readers.';
-export const metadata = { title: 'Better Stack vs Sentry', description, alternates: { canonical: `/compare/${slug}/` } };
+export const metadata = { title: 'Better Stack vs Sentry', description, alternates: { canonical: `${SITE.url}/compare/${slug}/` } };
 const faq = [
   { q: 'Is Better Stack a Sentry replacement?', a: 'Better Stack offers Sentry SDK-compatible error tracking plus uptime, logs, status pages and on-call. Sentry remains stronger for deep application debugging (spans, replays, profiling). Many teams use both.' },
   { q: 'Which has the better free tier for a solo builder?', a: 'Better Stack\'s free tier includes 10 monitors/heartbeats, a status page, Slack/email alerts, and limited free telemetry. Sentry\'s free Developer plan covers one user with error monitoring and tracing. Check each pricing page for current quotas.' },

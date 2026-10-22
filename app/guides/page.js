@@ -3,7 +3,7 @@ import { SITE } from '@/lib/errors';
 export const metadata = {
   title: 'Guides',
   description: 'Setup guides and tool comparisons for monitoring and hosting next to FixStack error fixes.',
-  alternates: { canonical: '/guides/' },
+  alternates: { canonical: `${SITE.url}/guides/` },
 };
 export default function Page() {
   const ld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'FixStack guides', url: `${SITE.url}/guides/` };

@@ -2,8 +2,8 @@ import Tier from '../Tier';
 import SponsorCallout from '../SponsorCallout';
 import { CATEGORY_SPONSOR, categorySponsorCheckout } from '@/lib/payments';
 import { CATEGORIES } from '@/lib/categories';
-import { errors } from '@/lib/errors';
-export const metadata = { title: 'Sponsor FixStack', description: 'Reach developers and AI app builders at the exact moment they are fixing errors in Lovable, Cursor, Supabase, Vercel, Stripe and Next.js.', alternates: { canonical: '/sponsor/' } };
+import { errors, SITE } from '@/lib/errors';
+export const metadata = { title: 'Sponsor FixStack', description: 'Reach developers and AI app builders at the exact moment they are fixing errors in Lovable, Cursor, Supabase, Vercel, Stripe and Next.js.', alternates: { canonical: `${SITE.url}/sponsor/` } };
 const short = n => n.replace(/ errors$/, '');
 export default function Page() {
   const total = CATEGORIES.reduce((n, c) => n + c.slugs.length, 0);

@@ -4,7 +4,7 @@ import { SITE } from '@/lib/errors';
 const slug = 'railway-vs-digitalocean-app-platform';
 const title = 'Railway vs DigitalOcean App Platform';
 const description = 'Compare Railway usage-based hosting with DigitalOcean App Platform fixed containers. Official pricing as of October 2026.';
-export const metadata = { title: 'Railway vs DigitalOcean App Platform', description, alternates: { canonical: `/compare/${slug}/` } };
+export const metadata = { title: 'Railway vs DigitalOcean App Platform', description, alternates: { canonical: `${SITE.url}/compare/${slug}/` } };
 const faq = [
   { q: 'Which is cheaper for a small always-on API?', a: 'DigitalOcean App Platform\'s smallest shared containers start at about $5/mo with included bandwidth, which can beat a busy always-on Railway service billed at full CPU/RAM rates. Railway often wins when traffic is bursty or you enable sleep so idle time costs little.' },
   { q: 'Can I keep disks between deploys?', a: 'Railway offers persistent volumes (published around $0.15/GB-month). App Platform containers use an ephemeral filesystem; durable data needs a database or external storage.' },

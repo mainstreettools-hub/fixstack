@@ -12,7 +12,7 @@ export function generateStaticParams() { return errors.map(e => ({ slug: e.slug 
 export function generateMetadata({ params }) {
   const e = getError(params.slug);
   const description = `${e.platform} error fix: ${e.meaning}`.slice(0, 158);
-  return { title: `${e.title} (${e.platform} fix)`, description, alternates: { canonical: `/errors/${e.slug}/` }, openGraph: { title: e.title, description, type: 'article', url: `/errors/${e.slug}/`, siteName: SITE.name, images: [OG_IMAGE], ...(e.checked ? { modifiedTime: e.checked } : {}) }, twitter: { card: 'summary_large_image', title: e.title, description, images: [OG_IMAGE.url] } };
+  return { title: `${e.title} (${e.platform} fix)`, description, alternates: { canonical: `${SITE.url}/errors/${e.slug}/` }, openGraph: { title: e.title, description, type: 'article', url: `/errors/${e.slug}/`, siteName: SITE.name, images: [OG_IMAGE], ...(e.checked ? { modifiedTime: e.checked } : {}) }, twitter: { card: 'summary_large_image', title: e.title, description, images: [OG_IMAGE.url] } };
 }
 export default function Page({ params }) {
   const e = getError(params.slug);

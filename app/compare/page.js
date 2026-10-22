@@ -3,7 +3,7 @@ import { SITE } from '@/lib/errors';
 export const metadata = {
   title: 'Tool comparisons: monitoring and hosting',
   description: 'Honest side-by-side comparisons of monitoring and hosting tools FixStack readers use: Better Stack, Sentry, Checkly, Railway, Render, Vercel, Netlify and DigitalOcean App Platform.',
-  alternates: { canonical: '/compare/' },
+  alternates: { canonical: `${SITE.url}/compare/` },
 };
 export default function Page() {
   const monitoring = COMPARISONS.filter(c => c.category === 'monitoring');

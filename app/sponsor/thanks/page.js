@@ -1,4 +1,5 @@
-export const metadata = { title: 'Thanks for sponsoring FixStack', robots: { index: false, follow: false }, alternates: { canonical: '/sponsor/thanks/' } };
+import { SITE } from '@/lib/errors';
+export const metadata = { title: 'Thanks for sponsoring FixStack', robots: { index: false, follow: false }, alternates: { canonical: `${SITE.url}/sponsor/thanks/` } };
 export default function Page() {
   return (<><h1>Thanks — your sponsorship is set up</h1><p>Your free month has started. Here is what happens next:</p>
     <ol>

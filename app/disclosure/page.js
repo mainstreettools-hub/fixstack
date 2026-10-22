@@ -1,4 +1,5 @@
-export const metadata = { title: 'Affiliate & Sponsorship Disclosure', description: 'How FixStack makes money: affiliate links, sponsorships and paid listings.', alternates: { canonical: '/disclosure/' } };
+import { SITE } from '@/lib/errors';
+export const metadata = { title: 'Affiliate & Sponsorship Disclosure', description: 'How FixStack makes money: affiliate links, sponsorships and paid listings.', alternates: { canonical: `${SITE.url}/disclosure/` } };
 export default function Page() {
   return (<><h1>Affiliate & Sponsorship Disclosure</h1>
     <p>FixStack is free to read. To keep it that way, we earn money in three ways:</p>

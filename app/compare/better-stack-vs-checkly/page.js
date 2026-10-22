@@ -4,7 +4,7 @@ import { SITE } from '@/lib/errors';
 const slug = 'better-stack-vs-checkly';
 const title = 'Better Stack vs Checkly: uptime vs synthetic monitoring';
 const description = 'Compare Better Stack and Checkly for uptime checks, Playwright synthetics, status pages and on-call. Official pricing as of October 2026.';
-export const metadata = { title: 'Better Stack vs Checkly', description, alternates: { canonical: `/compare/${slug}/` } };
+export const metadata = { title: 'Better Stack vs Checkly', description, alternates: { canonical: `${SITE.url}/compare/${slug}/` } };
 const faq = [
   { q: 'Which is better for Playwright browser checks?', a: 'Checkly is built around Playwright browser checks, API/multistep checks and monitoring-as-code (CLI, Terraform, Pulumi). Better Stack focuses on HTTP/uptime, heartbeats and incidents, with Playwright transaction monitoring billed by the minute.' },
   { q: 'Which is better for on-call and status pages?', a: 'Better Stack includes on-call scheduling, phone/SMS for responders, and status pages in the uptime product. Checkly offers status pages as a separate Communicate module and has more limited phone/SMS on lower plans.' },

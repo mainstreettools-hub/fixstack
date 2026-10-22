@@ -1,6 +1,6 @@
 import { FIX_PACK } from '@/lib/payments';
-import { errors, PLATFORMS } from '@/lib/errors';
-export const metadata = { title: 'FixStack Fix Pack: printable error-fix checklists (PDF)', description: `${errors.length} step-by-step fixes for Lovable, Cursor, Bolt, Replit, Supabase, Vercel, Stripe and Next.js errors as one printable PDF checklist.`, alternates: { canonical: '/fix-pack/' } };
+import { errors, PLATFORMS, SITE } from '@/lib/errors';
+export const metadata = { title: 'FixStack Fix Pack: printable error-fix checklists (PDF)', description: `${errors.length} step-by-step fixes for Lovable, Cursor, Bolt, Replit, Supabase, Vercel, Stripe and Next.js errors as one printable PDF checklist.`, alternates: { canonical: `${SITE.url}/fix-pack/` } };
 export default function Page() {
   const href = FIX_PACK.launchCode ? `${FIX_PACK.link}?prefilled_promo_code=${FIX_PACK.launchCode}` : FIX_PACK.link;
   return (<><h1>The FixStack Fix Pack</h1>

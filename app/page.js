@@ -1,10 +1,10 @@
-import { errors, PLATFORMS, platformSlug, OG_IMAGE } from '@/lib/errors';
+import { errors, PLATFORMS, platformSlug, OG_IMAGE, SITE } from '@/lib/errors';
 import ErrorList from './ErrorList';
 import Newsletter from './Newsletter';
 const homeTitle = 'FixStack: Fixes for Lovable, Cursor, Supabase, Vercel, Stripe & Next.js errors';
 const homeDesc = 'Copy-paste fixes for the most common Lovable, Cursor, Bolt, Replit, Supabase, Vercel, Stripe and Next.js errors: the exact error text, what it means, and step-by-step fixes with code.';
 export const metadata = {
-  alternates: { canonical: '/' },
+  alternates: { canonical: `${SITE.url}/` },
   openGraph: { title: homeTitle, description: homeDesc, url: '/', siteName: 'FixStack', type: 'website', locale: 'en_US', images: [OG_IMAGE] },
   twitter: { card: 'summary_large_image', title: homeTitle, description: homeDesc, images: [OG_IMAGE.url] },
 };

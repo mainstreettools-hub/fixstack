@@ -9,7 +9,7 @@ export function generateMetadata({ params }) {
   const p = platformFromSlug(params.platform);
   const n = errors.filter(e => e.platform === p).length;
   const description = `${n} common ${p} errors with the exact message, cause and a step-by-step fix. ${PLATFORM_INTROS[p] || ''}`.slice(0, 158);
-  return { title: `${n} common ${p} errors and fixes`, description, alternates: { canonical: `/platforms/${params.platform}/` }, openGraph: { title: `${p} errors and fixes`, description, url: `/platforms/${params.platform}/`, siteName: SITE.name, type: 'website', images: [OG_IMAGE] }, twitter: { card: 'summary_large_image', title: `${p} errors and fixes`, description, images: [OG_IMAGE.url] } };
+  return { title: `${n} common ${p} errors and fixes`, description, alternates: { canonical: `${SITE.url}/platforms/${params.platform}/` }, openGraph: { title: `${p} errors and fixes`, description, url: `/platforms/${params.platform}/`, siteName: SITE.name, type: 'website', images: [OG_IMAGE] }, twitter: { card: 'summary_large_image', title: `${p} errors and fixes`, description, images: [OG_IMAGE.url] } };
 }
 export default function Page({ params }) {
   const p = platformFromSlug(params.platform);

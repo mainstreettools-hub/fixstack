@@ -1,4 +1,5 @@
-export const metadata = { title: 'Privacy Policy', description: 'How FixStack handles analytics and newsletter data.', alternates: { canonical: '/privacy/' } };
+import { SITE } from '@/lib/errors';
+export const metadata = { title: 'Privacy Policy', description: 'How FixStack handles analytics and newsletter data.', alternates: { canonical: `${SITE.url}/privacy/` } };
 export default function Page() {
   return (<><h1>Privacy Policy</h1><p>Last updated: October 14, 2026</p>
     <h2>Analytics</h2><p>We use Vercel Web Analytics to understand which pages are useful. It collects anonymized, aggregated data such as page views, referrers, country and device/browser type. It does not use cookies, and visitors are not tracked across sites.</p>

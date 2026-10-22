@@ -4,7 +4,7 @@ import Quiz from './Quiz';
 export const metadata = {
   title: 'Which fix do I need?',
   description: 'Answer two questions about your stack and error symptom. FixStack points you to the matching copy-paste fix page.',
-  alternates: { canonical: '/quiz/' },
+  alternates: { canonical: `${SITE.url}/quiz/` },
 };
 
 export default function Page() {

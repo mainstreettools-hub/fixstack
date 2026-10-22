@@ -3,7 +3,7 @@ import { SITE } from '@/lib/errors';
 const slug = 'vercel-vs-netlify';
 const title = 'Vercel vs Netlify: which host for Next.js and static apps?';
 const description = 'Compare Vercel and Netlify free tiers, Pro pricing and Next.js fit. Figures from official pricing pages as of October 2026. No affiliate links on this page.';
-export const metadata = { title: 'Vercel vs Netlify', description, alternates: { canonical: `/compare/${slug}/` } };
+export const metadata = { title: 'Vercel vs Netlify', description, alternates: { canonical: `${SITE.url}/compare/${slug}/` } };
 const faq = [
   { q: 'Can I run a commercial site on the free plan?', a: 'Netlify\'s Free plan allows commercial use. Vercel Hobby is for non-commercial / personal projects; commercial production needs Pro (per Vercel\'s published plan rules).' },
   { q: 'Which is better for Next.js?', a: 'Vercel builds Next.js and usually has the deepest App Router / serverless / ISR support. Netlify also runs Next.js and is a solid choice when you want Netlify\'s credit model, Forms, or commercial use on Free.' },

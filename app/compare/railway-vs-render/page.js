@@ -4,7 +4,7 @@ import { SITE } from '@/lib/errors';
 const slug = 'railway-vs-render';
 const title = 'Railway vs Render: which PaaS for backends and databases?';
 const description = 'Compare Railway and Render pricing models, free tiers and features for web services, workers and databases. Official prices as of October 2026.';
-export const metadata = { title: 'Railway vs Render', description, alternates: { canonical: `/compare/${slug}/` } };
+export const metadata = { title: 'Railway vs Render', description, alternates: { canonical: `${SITE.url}/compare/${slug}/` } };
 const faq = [
   { q: 'Is Railway cheaper than Render?', a: 'It depends on the workload. Railway meters CPU and RAM by the second, so idle or bursty apps can cost less. Render sells fixed instance sizes plus a workspace plan, which is often easier to forecast for always-on services.' },
   { q: 'Do free tiers stay online?', a: 'Render\'s free instances spin down after idle time (about 15 minutes), which means a cold start on the next request. Railway\'s free plan includes a small monthly credit with resource caps — check railway.com/pricing for current limits.' },
