@@ -15,6 +15,9 @@ footer a{color:#555}.fine{font-size:13px;color:#777}
 table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;background:#fff}
 th,td{border:1px solid #eee;padding:8px 10px;text-align:left;vertical-align:top}
 th{background:#f3f3f3}
+.table-wrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+.table-wrap table{min-width:36em}
+caption{caption-side:top;text-align:left;font-weight:600;padding:0 0 8px}
 
 .quiz{margin-top:24px}
 .quiz-steps{display:flex;gap:12px;list-style:none;padding:0;margin:0 0 20px;flex-wrap:wrap;font-size:13px;color:#888}

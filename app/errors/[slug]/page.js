@@ -35,8 +35,9 @@ export default function Page({ params }) {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, '\\u003c') }} />
     <p><a href="/">← All errors</a> · <a href={`/platforms/${platformSlug(e.platform)}/`} className="tag">{e.platform}</a>{cat && <span className="tag">{cat.name}</span>}</p>
     <h1>{e.title}</h1>
-    <h2>Exact error</h2><pre className="err">{e.message}</pre>
+    <h2>{e.messageLabel || 'Exact error'}</h2>{e.messageLabel ? <p>{e.message}</p> : <pre className="err">{e.message}</pre>}
     <h2>What it means</h2><p>{e.meaning}</p>
+    {(Array.isArray(e.table) ? e.table : e.table ? [e.table] : []).map((t, i) => <div className="table-wrap" key={i}><table>{t.caption && <caption>{t.caption}</caption>}<thead><tr>{t.headers.map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{t.rows.map((row, ri) => <tr key={ri}>{row.map((cell, ci) => <td key={ci}>{cell}</td>)}</tr>)}</tbody></table></div>)}
     <h2>Likely causes</h2><ul>{e.causes.map((c, i) => <li key={i}>{c}</li>)}</ul>
     <h2>How to fix it</h2><ol>{e.steps.map((s, i) => <li key={i}><p>{s.text}</p>{s.code && <pre><code>{s.code}</code></pre>}</li>)}</ol>
     {sponsor
