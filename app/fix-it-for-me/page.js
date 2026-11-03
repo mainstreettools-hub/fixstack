@@ -1,12 +1,12 @@
 import { SITE } from '@/lib/errors';
 import { FIX_IT } from '@/lib/payments';
-export const metadata = { title: 'Fix it for me: $49 to get your app working again', description: 'App broken and you don\'t want to dig through code or AI answers? Ryan will get it working again. $49 per error, full refund if he can\'t.', alternates: { canonical: `${SITE.url}/fix-it-for-me/` } };
+export const metadata = { title: 'Fix it for me: $49 to get your app working again', description: 'App broken and you don\'t want to dig through code or AI answers? I\'ll get it working again. $49 for one error, full refund if I can\'t.', alternates: { canonical: `${SITE.url}/fix-it-for-me/` } };
 export default function Page() {
   const subject = 'Fix it for me';
   const body = 'Exact error text:\n\n\nTool (Lovable, Cursor, Supabase, etc.):\n\n\nRepo link or screenshot:\n\n\nWhat I have already tried:\n\n\n(Please don\'t include passwords, API keys or secret keys.)\n';
   const mailto = `mailto:${FIX_IT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   return (<><h1>Fix it for me</h1>
-    <p className="sub">Your app is broken and you don't want to spend another evening digging through code or AI answers. Send me the error and I'll get it working again. $49 for one error, or you don't pay.</p>
+    <p className="sub">Your app is broken and you don't want to spend another evening digging through code or AI answers. Send me the error and I\'ll get it working again. $49 for one error, or you don't pay.</p>
     <p>I'm Ryan Hovis and I run FixStack. I'll personally look at one error in your Lovable, Cursor, Bolt, Replit, Supabase, Vercel, Next.js or Stripe app, and either fix it or tell you exactly what to change.</p>
     <h2>What's included</h2>
     <ul><li>One error, start to finish</li><li>The fix itself, or the exact steps to apply it</li><li>A short note on what caused it, so you know what to watch for next time</li></ul>
