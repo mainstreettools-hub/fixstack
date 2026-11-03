@@ -2,7 +2,7 @@ import { errors, SITE, PLATFORMS, HUBS_UPDATED, platformSlug } from '@/lib/error
 import { COMPARISONS } from '@/lib/comparisons';
 export const dynamic = 'force-static';
 export default function sitemap() {
-  const staticPages = ['about', 'sponsor', 'featured', 'privacy', 'disclosure', 'fix-pack', 'guides', 'guides/uptime-monitoring-better-stack', 'compare', 'quiz'];
+  const staticPages = ['about', 'sponsor', 'featured', 'privacy', 'disclosure', 'fix-pack', 'guides', 'guides/uptime-monitoring-better-stack', 'compare', 'quiz', 'fix-it-for-me'];
   return [
     { url: `${SITE.url}/`, priority: 1 },
     ...PLATFORMS.map(p => ({ url: `${SITE.url}/platforms/${platformSlug(p)}/`, lastModified: HUBS_UPDATED, priority: 0.6 })),

@@ -40,6 +40,7 @@ export default function Page({ params }) {
     {(Array.isArray(e.table) ? e.table : e.table ? [e.table] : []).map((t, i) => <div className="table-wrap" key={i}><table>{t.caption && <caption>{t.caption}</caption>}<thead><tr>{t.headers.map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{t.rows.map((row, ri) => <tr key={ri}>{row.map((cell, ci) => <td key={ci}>{cell}</td>)}</tr>)}</tbody></table></div>)}
     <h2>Likely causes</h2><ul>{e.causes.map((c, i) => <li key={i}>{c}</li>)}</ul>
     <h2>How to fix it</h2><ol>{e.steps.map((s, i) => <li key={i}><p>{s.text}</p>{s.code && <pre><code>{s.code}</code></pre>}</li>)}</ol>
+    <FixForMe />
     {sponsor
       ? <SponsorCallout sponsor={sponsor} />
       : cat && <aside className="tier fine">Your tool here: sponsor <b>{cat.name}</b> and reach builders fixing these exact errors. <a href="/sponsor/#categories">Learn more</a></aside>}
@@ -50,7 +51,6 @@ export default function Page({ params }) {
     {e.checked && <p className="fine">Last checked against official docs on <time dateTime={e.checked}>{new Date(e.checked + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' })}</time>{e.sources?.length > 0 && <>. Sources: {e.sources.map((x, i) => <span key={x.url}>{i > 0 && ', '}<a href={x.url} rel="noopener" target="_blank">{x.name}</a></span>)}</>}.</p>}
     <h2>Related errors</h2><ul>{e.related.map(r => { const x = getError(r); return <li key={r}><a href={`/errors/${r}/`}>{x.title}</a></li>; })}</ul>
     <p>More <a href={`/platforms/${platformSlug(e.platform)}/`}>{e.platform} errors and fixes →</a></p>
-    <FixForMe />
     <PlatformExtras platform={e.platform} />
     <Newsletter />
   </article>);
