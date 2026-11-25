@@ -37,6 +37,7 @@ export default function Page({ params }) {
     <h1>{e.title}</h1>
     <h2>{e.messageLabel || 'Exact error'}</h2>{e.messageLabel ? <p>{e.message}</p> : <pre className="err">{e.message}</pre>}
     <h2>What it means</h2><p>{e.meaning}</p>
+    {e.seeAlso?.length > 0 && <p>See also: official Supabase guide{e.seeAlso.length > 1 ? 's' : ''}: {e.seeAlso.map((x, i) => <span key={x.url}>{i > 0 && '; '}<a href={x.url} rel="noopener" target="_blank">{x.name}</a></span>)}.</p>}
     {(Array.isArray(e.table) ? e.table : e.table ? [e.table] : []).map((t, i) => <div className="table-wrap" key={i}><table>{t.caption && <caption>{t.caption}</caption>}<thead><tr>{t.headers.map(h => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{t.rows.map((row, ri) => <tr key={ri}>{row.map((cell, ci) => <td key={ci}>{cell}</td>)}</tr>)}</tbody></table></div>)}
     <h2>Likely causes</h2><ul>{e.causes.map((c, i) => <li key={i}>{c}</li>)}</ul>
     <h2>How to fix it</h2><ol>{e.steps.map((s, i) => <li key={i}><p>{s.text}</p>{s.code && <pre><code>{s.code}</code></pre>}</li>)}</ol>
